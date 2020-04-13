@@ -1,3 +1,5 @@
+package ch09
+
 data class Recipe(var name: String)
 
 fun main(args: Array<String>) {
@@ -15,6 +17,7 @@ fun main(args: Array<String>) {
     mShoppingList.reverse()
     println("mShoppingList reversed: $mShoppingList")
 
+//    todo List --> Set
     val mShoppingSet = mShoppingList.toMutableSet()
     println("mShoppingSet: $mShoppingSet")
     val moreShopping = setOf("Chives", "Spinach", "Milk")

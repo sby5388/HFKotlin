@@ -1,8 +1,9 @@
+package ch11
 typealias DoubleConversion = (Double) -> Double
 
 fun convert(
-    x: Double,
-    converter: DoubleConversion
+        x: Double,
+        converter: DoubleConversion
 ): Double {
     val result = converter(x)
     println("$x is converted to $result")
@@ -22,8 +23,8 @@ fun getConversionLambda(str: String): DoubleConversion {
 }
 
 fun combine(
-    lambda1: DoubleConversion,
-    lambda2: DoubleConversion
+        lambda1: DoubleConversion,
+        lambda2: DoubleConversion
 ): DoubleConversion {
     return { x: Double -> lambda2(lambda1(x)) }
 }

@@ -1,3 +1,5 @@
+package ch08
+
 class Wolf {
     var hunger = 10
     val food = "meat"
@@ -7,8 +9,6 @@ class Wolf {
     }
 }
 
-
-
 class MyWolf {
     var wolf: Wolf? = Wolf()
 
@@ -17,15 +17,9 @@ class MyWolf {
     }
 }
 
-
-
-
 fun getAlphaWolf(): Wolf? {
     return Wolf()
 }
-
-
-
 
 fun main(args: Array<String>) {
     var w: Wolf? = Wolf()
@@ -52,5 +46,8 @@ fun main(args: Array<String>) {
     getAlphaWolf()?.let { it.eat() }
 
     w = null
+//    todo 对于不确定的值，应当使用?.,而不是未经检测地使用!!. 操作符
+
+    var z2 = w?.hunger
     var z = w!!.hunger
 }

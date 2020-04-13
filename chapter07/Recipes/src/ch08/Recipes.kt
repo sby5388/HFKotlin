@@ -1,22 +1,25 @@
+package ch08
+
 data class Recipe(
-    val title: String,
-    val mainIngredient: String,
-    val isVegetarian: Boolean = false,
-    val difficulty: String = "Easy"
+        val title: String,
+        val mainIngredient: String,
+        val isVegetarian: Boolean = false,
+        val difficulty: String = "Easy"
 ) {
 }
 
 class Mushroom(val size: Int, val isMagic: Boolean) {
+    //    todo 一个有两个构造方法
     constructor(isMagic_param: Boolean) : this(0, isMagic_param) {
         //Code that runs when the secondary constructor is called
     }
 }
 
 fun findRecipes(
-    title: String = "",
-    ingredient: String = "",
-    isVegetarian: Boolean = false,
-    difficulty: String = ""
+        title: String = "",
+        ingredient: String = "",
+        isVegetarian: Boolean = false,
+        difficulty: String = ""
 ): Array<Recipe> {
     //Code to find recipes
     return arrayOf(Recipe(title, ingredient, isVegetarian, difficulty))
@@ -33,6 +36,7 @@ fun addNumbers(a: Double, b: Double): Double {
 fun main(args: Array<String>) {
     val r1 = Recipe("Thai Curry", "Chicken")
     val r2 = Recipe(title = "Thai Curry", mainIngredient = "Chicken")
+//    todo copy!
     val r3 = r1.copy(title = "Chicken Bhuna")
     println("r1 hash code: ${r1.hashCode()}")
     println("r2 hash code: ${r2.hashCode()}")

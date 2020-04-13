@@ -1,13 +1,15 @@
 class Dog(val name: String, weight_param: Int, breed_param: String) {
 
     init {
-        print("Dog $name has been created. ")
+//        todo 构造方法时调用这个
+        print("ch10.Dog $name has been created. ")
     }
 
     var activities = arrayOf("Walks")
     val breed = breed_param.toUpperCase()
 
     init {
+        //todo 构造方法调用这个!
         println("The breed is $breed.")
     }
 
@@ -16,6 +18,7 @@ class Dog(val name: String, weight_param: Int, breed_param: String) {
             if (value > 0) field = value
         }
 
+    //    todo get()??? 声明一个常量，且暴露方法
     val weightInKgs: Double
         get() = weight / 2.2
 

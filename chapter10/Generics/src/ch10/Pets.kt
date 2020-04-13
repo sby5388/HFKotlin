@@ -1,3 +1,5 @@
+package ch10
+
 abstract class Pet(var name: String)
 
 class Cat(name: String) : Pet(name)
@@ -29,6 +31,9 @@ class Contest<T : Pet>(var vet: Vet<in T>) {
     }
 }
 
+/**
+ * 零售商？动物零售商？动物饲料零售商？
+ */
 interface Retailer<out T> {
     fun sell(): T
 }
@@ -42,14 +47,14 @@ class CatRetailer : Retailer<Cat> {
 
 class DogRetailer : Retailer<Dog> {
     override fun sell(): Dog {
-        println("Sell Dog")
+        println("Sell ch10.Dog")
         return Dog("")
     }
 }
 
 class FishRetailer : Retailer<Fish> {
     override fun sell(): Fish {
-        println("Sell Fish")
+        println("Sell ch10.Fish")
         return Fish("")
     }
 }
@@ -71,13 +76,13 @@ fun main(args: Array<String>) {
     catContest.addScore(catFuzz, 50)
     catContest.addScore(catKatsu, 45)
     val topCat = catContest.getWinners().first()
-    println("Cat contest winner is ${topCat.name}")
+    println("ch10.Cat contest winner is ${topCat.name}")
 
     val petContest = Contest<Pet>(petVet)
     petContest.addScore(catFuzz, 50)
     petContest.addScore(fishFinny, 56)
     val topPet = petContest.getWinners().first()
-    println("Pet contest winner is ${topPet.name}")
+    println("ch10.Pet contest winner is ${topPet.name}")
 
     val fishContest = Contest<Fish>(petVet)
 

@@ -1,3 +1,6 @@
+/**
+ * 石头剪刀布游戏
+ */
 fun main(args: Array<String>) {
     val options = arrayOf("Rock", "Paper", "Scissors")
     val gameChoice = getGameChoice(options)
@@ -6,7 +9,7 @@ fun main(args: Array<String>) {
 }
 
 fun getGameChoice(optionsParam: Array<String>) =
-    optionsParam[(Math.random() * optionsParam.size).toInt()]
+        optionsParam[(Math.random() * optionsParam.size).toInt()]
 
 fun getUserChoice(optionsParam: Array<String>): String {
     var isValidChoice = false
@@ -35,8 +38,8 @@ fun printResult(userChoice: String, gameChoice: String) {
     //Figure out the result
     if (userChoice == gameChoice) result = "Tie!"
     else if ((userChoice == "Rock" && gameChoice == "Scissors") ||
-        (userChoice == "Paper" && gameChoice == "Rock") ||
-        (userChoice == "Scissors" && gameChoice == "Paper")) result = "You win!"
+            (userChoice == "Paper" && gameChoice == "Rock") ||
+            (userChoice == "Scissors" && gameChoice == "Paper")) result = "You win!"
     else result = "You lose!"
     //Print the result
     println("You chose $userChoice. I chose $gameChoice. $result")
